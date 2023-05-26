@@ -23,13 +23,13 @@ class BlogBundle extends AbstractBundle
     public function loadExtension(array $config, ContainerConfigurator $container, ContainerBuilder $builder): void
     {
         // Autowire
-        $container->services()->load('GingTeam\Symfony\\', $this->getPath())
+        $container->services()->load($this->getNamespace().'\\', $this->getPath())
             ->autoconfigure()
             ->autowire()
             ->exclude(['Entity', 'Router']); // Disable autowire for Entity, Router
 
         // Register controllers
-        $container->services()->load('GingTeam\Symfony\Controller\\', $this->getPath().'/Controller')
+        $container->services()->load($this->getNamespace().'\Controller\\', $this->getPath().'/Controller')
             ->tag('controller.service_arguments')
             ->autoconfigure()
             ->autowire();
