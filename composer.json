@@ -1,0 +1,24 @@
+{
+    "name": "gingteam/blog-bundle",
+    "authors": [
+        {
+            "name": "ging-dev",
+            "role": "maintainer"
+        }
+    ],
+    "minimum-stability": "stable",
+    "version": "1.0",
+    "require-dev": {
+        "symfony/dependency-injection": "^6.2",
+        "symfony/http-kernel": "^6.2",
+        "symfony/doctrine-bridge": "^6.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "GingTeam\\Symfony\\": ""
+        }
+    },
+    "require": {
+        "doctrine/doctrine-bundle": "^2.9"
+    }
+}
