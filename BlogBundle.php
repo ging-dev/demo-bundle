@@ -15,7 +15,7 @@ class BlogBundle extends AbstractBundle
 {
     protected string $extensionAlias = 'gingteam_blog';
 
-    public function prependExtension(ContainerConfigurator $container, ContainerBuilder $builder): void
+    public function build(ContainerBuilder $builder): void
     {
         $builder->addCompilerPass(DoctrineOrmMappingsPass::createAttributeMappingDriver([$this->getNamespace().'\Entity'], [__DIR__.'/Entity']));
     }
